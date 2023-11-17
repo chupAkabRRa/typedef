@@ -1,3 +1,7 @@
+// @ts-check
+const { fontFamily } = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
+
 import type { Config } from 'tailwindcss'
 
 const config: Config = {

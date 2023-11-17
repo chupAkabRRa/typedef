@@ -1,5 +1,5 @@
-import React from "react";
-import siteMetadata from "@/data/siteMetadata";
+import React from 'react'
+import siteMetadata from '@/data/siteMetadata'
 
 export default function Home() {
   return (
@@ -13,10 +13,8 @@ export default function Home() {
             {siteMetadata.description}
           </p>
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          No posts found
-        </ul>
+        <ul className="divide-y divide-gray-200 dark:divide-gray-700">No posts found</ul>
       </div>
     </>
-  );
+  )
 }
