@@ -1,9 +1,19 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '@/css/tailwind.css'
 
 import siteMetadata from '@/data/siteMetadata'
 import Header from '@/components/Header'
+import { ThemeProviders } from './theme-provider'
+import SectionContainer from '@/components/SectionContainer'
+
+import { Space_Grotesk } from 'next/font/google'
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-space-grotesk',
+})
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,10 +24,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={siteMetadata.language}>
+    <html
+      lang={siteMetadata.language}
+      className={`${spaceGrotesk.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
       <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
-        <Header />
-        <main className="mb-auto">{children}</main>
+        <ThemeProviders>
+          <SectionContainer>
+            <div className="flex h-screen flex-col justify-between font-sans">
+              <Header />
+              <main className="mb-auto">{children}</main>
+            </div>
+          </SectionContainer>
+        </ThemeProviders>
       </body>
     </html>
   )
