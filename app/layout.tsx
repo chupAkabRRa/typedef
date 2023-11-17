@@ -4,9 +4,9 @@ import '@/css/tailwind.css'
 
 import siteMetadata from '@/data/siteMetadata'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import { ThemeProviders } from './theme-provider'
 import SectionContainer from '@/components/SectionContainer'
-
 import { Space_Grotesk } from 'next/font/google'
 
 const spaceGrotesk = Space_Grotesk({
@@ -35,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex h-screen flex-col justify-between font-sans">
               <Header />
               <main className="mb-auto">{children}</main>
+              <Footer />
             </div>
           </SectionContainer>
         </ThemeProviders>

@@ -1,4 +1,3 @@
-import React from 'react'
 import siteMetadata from '@/data/siteMetadata'
 
 export default function Home() {
