@@ -1,10 +1,15 @@
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import Link from 'next/link'
+import Tag from '@/components/Tag'
+
+interface HomeProps{
+    posts:any[]
+}
 
 const MAX_POSTS_DISPLAY = 5
 
-export default function Home({ posts }) {
+export default function Home({ posts } : HomeProps) {
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -42,7 +47,7 @@ export default function Home({ posts }) {
                             </Link>
                           </h2>
                           <div className="flex flex-wrap">
-                            {tags.map((tag) => (
+                            {tags.map((tag: any) => (
                               <Tag key={tag} text={tag} />
                             ))}
                           </div>
